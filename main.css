@@ -1,0 +1,57 @@
+body{
+    background-color: #262b30;
+    color: white;
+}
+table{
+    position: absolute;
+    top: 5px;
+    left: 10em;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 53%;
+    height: 46.5rem;
+    background-color: #30363d;
+}
+td{
+    border: 2px solid #262b30 !important;
+}
+.slider {
+    width: 8px;
+    height: 100%;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    -webkit-appearance: slider-vertical;
+    right: 0%;
+}
+.slidecontainer1{
+    position: absolute;
+    margin-left: 93%;
+    height: 65%;
+}
+.slidecontainer2{
+    position: absolute;
+    margin-left: 85%;
+    height: 65%;
+}
+.start{
+    position: absolute;
+    margin-left: 86%;
+    margin-top: 35%;
+    width: 160px;
+}
+.generate{
+    position: absolute;
+    margin-left: 86%;
+    margin-top: 38.5%;
+    width: 160px;
+}
+.reset{
+    position: absolute;
+    margin-left: 86%;
+    margin-top: 42%;
+    width: 160px;
+}
