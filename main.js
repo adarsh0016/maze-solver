@@ -5,7 +5,7 @@ let ms;
 
 let bgColour = "#30363d";
 let obstacle_colour = "white";
-let path_colour = "#fff291";
+let path_colour = "  #33ccff";
 let spread1_colour = "#c93328";
 let spread2_colour = "#691a15";
 let spread3_colour = "#360e0b";
@@ -37,11 +37,11 @@ slider.oninput = function() {
 var Speed_slider = document.getElementById("speedRange");
 var speed = document.getElementById("speedDemo");
 speed.innerHTML = Speed_slider.value;
-ms = 21 - Speed_slider.value;
+ms = 40 - Speed_slider.value;
 
 Speed_slider.oninput = function() {
     speed.innerHTML = this.value;
-    ms = 30 - this.value;
+    ms = 40 - this.value;
 }
 
 function Draw(){
@@ -133,12 +133,12 @@ function Start(){
         return true;
     }
 
-    function printPath(path, arr, count){
+    function printPath(path, count){
         for(let i = 0; i < path.length; i++){
             var x = document.getElementById("mytable").getElementsByTagName("td");
             setTimeout(function(){
                 x[path[i][0]*ROW + path[i][1]].style.backgroundColor = path_colour;
-            }, (count+i+10) * ms);
+            }, (count + i/4) * ms);
         }
     }
 
@@ -163,7 +163,7 @@ function Start(){
         var q = [];
 
         if(isValid(arr, vis, row, col)){
-            q.push([[row, col]]);
+            q.push([[[row, col]],0]);
             vis[row][col] = true;
         }
         else{
@@ -173,15 +173,18 @@ function Start(){
         let count = 0;
 
         while(q.length != 0){
-            var path = q[0];
+            var path = q[0][0];
+            count = q[0][1];
             var c = path[path.length - 1];
 
             if(c[0] == ROW - 1 && c[1] == COL - 1){
-                printPath(path, arr, count);
+                printPath(path, count);
                 return true;
             }
 
             q.shift();
+
+            count++;
 
             for(let i = 0; i < 4; i++){
                 let adjr = c[0] + dRow[i];
@@ -190,15 +193,13 @@ function Start(){
 
                 if(isValid(arr, vis, adjr, adjc)){
                     newPath.push([adjr, adjc]);
-                    q.push(newPath);
+                    q.push([newPath, count]);
 
                     spread_colour(newPath, count);
 
                     vis[adjr][adjc] = 1;
                 }
             }
-
-            count++;
         }
         return false;
     }
@@ -226,6 +227,7 @@ function Start(){
 
 //Maze generation algorithm
 function Generate(){
+    Reset();
     arr = [];
     let vis_gen = [];
 
@@ -245,6 +247,16 @@ function Generate(){
             arr1.push(1);
         }
         arr.push(arr1);
+    }
+
+    function random(){
+        let a = Math.random();
+        if(a < 0.01){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     function isValid(r, c, cell){
@@ -295,7 +307,7 @@ function Generate(){
         }
 
         if(ret > 1){
-            return true;
+            return random();
         }
         else{
             return false;
