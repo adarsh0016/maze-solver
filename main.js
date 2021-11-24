@@ -16,8 +16,8 @@ let arr = [];
 let vis = [];
 
 //for adjacent cells.
-var dRow = [-1, 0, 1, 0];
-var dCol = [0, 1, 0, -1];
+var dRow = [-1, 0, 0, 1];
+var dCol = [0, 1, -1, 0];
 
 
 //Size slider
