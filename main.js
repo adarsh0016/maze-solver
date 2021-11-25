@@ -7,10 +7,11 @@ let MS = 40;   //delay.
 //pre-defined colours
 let bgColour = "#30363d";
 let obstacle_colour = "white";
-let path_colour = "  #33ccff";
+let path_colour_start = [255, 252, 51]; //"rgb(0,255,255)"
+let path_colour_end = [119, 0, 255];   //"rgb(51,51,255)"
 let spread1_colour = "#c93328";
-let spread2_colour = "#691a15";
-let spread3_colour = "#360e0b";
+let spread2_colour = "#753534";
+let spread3_colour = "#4f3539";
 
 let arr = [];
 let vis = [];
@@ -134,16 +135,35 @@ function spread_colour(path, count){
 
 //it colours the final path.
 function printPath(path, count){
-    for(let i = 0; i < path.length; i++){
+    let l = path.length;
+    let diff = [];
+
+    for(let i = 0; i < 3; i++){
+        diff.push((path_colour_end[i] - path_colour_start[i])/l);
+    }
+
+    //rainbow effect
+    function path_colour(i){
+        let colour = [];
+        for(let j = 0; j < 3; j++){
+            colour.push(path_colour_start[j] + i * diff[j]);
+        }
+
+        return "rgb(" + colour[0].toString() + "," + colour[1] + "," + colour[2] + ")";
+    }
+
+    for(let i = 0; i < l; i++){
         var x = document.getElementById("mytable").getElementsByTagName("td");
         setTimeout(function(){
-            x[path[i][0]*ROW + path[i][1]].style.backgroundColor = path_colour;
+            x[path[i][0]*ROW + path[i][1]].style.backgroundColor = path_colour(i);
+            x[path[i][0]*ROW + path[i][1]].style.border = "0px";
         }, (count + 15) * ms + i * 10);
     }
 }
 
 //solver function.
 function Start(){
+    Draw();
     vis = [];
 
     //we have to call colour here because if we start the solver again, we need to remove the solved path.
