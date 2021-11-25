@@ -61,11 +61,12 @@ td{
         position: absolute;
         top: 7%;
         left: 0.7%;
-        width: 99%;
+        width: 103.5%;
         height: 50%;
     }
     .slider {
-        width: 88%;
+        position: absolute;
+        width: 90%;
         height: 8px;
         border-radius: 5px;  
         background: #d3d3d3;
@@ -74,13 +75,16 @@ td{
         -webkit-transition: .2s;
         transition: opacity .2s;
         -webkit-appearance: slider-horizontal;
-        right: 0%;
+        right: auto;
     }
     .slidecontainer1{
         position: absolute;
         margin-top: 125%;
         margin-left: 5%;
         width: 100%;
+    }
+    .demo{
+        margin-top: 3%;
     }
     .slidecontainer2{
         position: absolute;
