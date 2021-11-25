@@ -59,7 +59,7 @@ td{
 @media only screen and (max-width: 875px){
     table{
         position: absolute;
-        top: 7%;
+        top: 3%;
         left: 0.7%;
         width: 99%;
         height: 50%;
@@ -79,7 +79,7 @@ td{
     }
     .slidecontainer1{
         position: relative;
-        margin-top: 110%;
+        margin-top: 100%;
         margin-left: 5%;
         width: 95%;
         height: auto;
