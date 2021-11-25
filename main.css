@@ -65,8 +65,8 @@ td{
         height: 50%;
     }
     .slider {
-        position: absolute;
-        width: 90%;
+        position: relative;
+        width: 94%;
         height: 5px;
         border-radius: 5px;  
         background: #d3d3d3;
@@ -78,36 +78,35 @@ td{
         right: auto;
     }
     .slidecontainer1{
-        position: absolute;
-        margin-top: 115%;
+        position: relative;
+        margin-top: 110%;
         margin-left: 5%;
         width: 95%;
-    }
-    .demo{
-        margin-top: 3%;
+        height: auto;
     }
     .slidecontainer2{
-        position: absolute;
-        margin-top: 127%;
+        position: relative;
+        margin-top: 1em;
         margin-left: 5%;
         width: 95%;
+        height: auto;
     }
     .start{
-        position: absolute;
+        position:relative;
         margin-left: 30%;
-        margin-top: 35em;
+        margin-top: 1em;
         width: 160px;
     }
     .generate{
-        position: absolute;
+        position: relative;
         margin-left: 30%;
-        margin-top: 39em;
+        margin-top: 1em;
         width: 160px;
     }
     .reset{
-        position: absolute;
+        position: relative;
         margin-left: 30%;
-        margin-top: 43em;
+        margin-top: 1em;
         width: 160px;
     }
 }
