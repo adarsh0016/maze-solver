@@ -94,7 +94,7 @@ td{
     .start{
         position:relative;
         margin-left: 30%;
-        margin-top: 1em;
+        margin-top: 0em;
         width: 160px;
     }
     .generate{
