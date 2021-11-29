@@ -15,6 +15,26 @@ table{
 td{
     border: 2px solid #262b30;
 }
+a{
+    color: white;
+}
+a:hover{
+    color: #d3d3d3;
+}
+.fa-github{
+    font-size: 2em;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 1%;
+    cursor: pointer;
+}
+.fa-linkedin{
+    font-size: 2em;
+    position: absolute;
+    margin-left: 1.1%;
+    margin-top: 5%;
+    cursor: pointer;
+}
 .slider {
     width: 8px;
     height: 100%;
@@ -63,6 +83,16 @@ td{
         left: 0.7%;
         width: 99%;
         height: 50%;
+    }
+    .fa-github{
+        font-size: 1em;
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+    .fa-linkedin{
+        font-size: 1em;
+        margin-left: 8%;
+        margin-top: 1%;
     }
     .slider {
         position: relative;
