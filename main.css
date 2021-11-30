@@ -15,6 +15,10 @@ table{
 td{
     border: 2px solid #262b30;
 }
+td:hover{
+    cursor: pointer;
+    background-color: #3e464e;
+}
 a{
     color: white;
 }
@@ -33,6 +37,13 @@ a:hover{
     position: absolute;
     margin-left: 1.1%;
     margin-top: 5%;
+    cursor: pointer;
+}
+.fa-info-circle{
+    font-size: 1.5em;
+    position: absolute;
+    margin-left: 1.1%;
+    margin-top: 45%;
     cursor: pointer;
 }
 .slider {
@@ -76,6 +87,42 @@ a:hover{
     width: 160px;
 }
 
+.bg-blur{
+    top: 0;
+    position: fixed;
+    background-color: rgb(4, 5, 5, .6);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    visibility: hidden;
+}
+.help{
+    background-color:rgb(62, 70, 78, 1);
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 80%;
+    border-radius: 25px;
+}
+.help-heading{
+    padding: 0.5rem;
+}
+.gif{
+    width: 40%;
+}
+.generate-help{
+    position: absolute;
+    margin-left: 50%;
+    top: 20%;
+}
+.draw-help{
+    position: absolute;
+    margin-left: 50%;
+    margin-right: 5%;
+    top: 65%;
+}
+
 @media only screen and (max-width: 875px){
     table{
         position: absolute;
@@ -92,6 +139,11 @@ a:hover{
     .fa-linkedin{
         font-size: 1em;
         margin-left: 8%;
+        margin-top: 1%;
+    }
+    .fa-info-circle{
+        font-size: 1em;
+        margin-left: 95%;
         margin-top: 1%;
     }
     .slider {
@@ -138,5 +190,21 @@ a:hover{
         margin-left: 30%;
         margin-top: 1em;
         width: 160px;
+    }
+
+    .gif{
+        width: 90%;
+    }
+    .generate-help{
+        position: relative;
+        margin-left: 5%;
+        top: 2%;
+        margin-right: 5%;
+    }
+    .draw-help{
+        position: relative;
+        margin-left: 5%;
+        margin-right: 5%;
+        top: 2%;
     }
 }

@@ -48,6 +48,16 @@ Speed_slider.oninput = function() {
     ms = MS - this.value;
 }
 
+//help-button
+document.getElementById("help-button").onclick = function() {
+    document.getElementById("help-bar").style.visibility = "visible";
+}
+
+//remove-help-bar
+document.getElementById("help-bar").onclick = function() {
+    document.getElementById("help-bar").style.visibility = "hidden";
+}
+
 //Drawing tables
 function Draw(){
 
@@ -77,7 +87,6 @@ function Draw(){
         let row = document.createElement('tr');
         for(let j = 0; j < COL; j++){
             let cell = document.createElement('td');
-            cell.innerHTML = "";
             cell.setAttribute('class', 'td');
             row.appendChild(cell);
         }
